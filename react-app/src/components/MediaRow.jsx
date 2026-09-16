@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router";
 
 const MediaRow = (props) => {
   const item = props.item;
-  const selectedItem = props.selectedItem;
-  const setSelectedItem = props.setSelectedItem;
+  //const setSelectedItem = props.setSelectedItem;
   return (
-    <tr onClick={() => setSelectedItem(item)}>
+    <tr>
       <td>
         <img src={item.thumbnail} alt={item.title} />
       </td>
@@ -15,7 +15,9 @@ const MediaRow = (props) => {
       <td>{item.filesize}</td>
       <td>{item.media_type}</td>
       <td>
-        <button onClick={() => props.setSelectedItem(item)}>View</button>
+        <Link to="/single" state={{ item }}>
+          Show
+        </Link>
       </td>
     </tr>
   );
