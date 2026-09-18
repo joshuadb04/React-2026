@@ -1,12 +1,12 @@
 const SingleView = (props) => {
-  const media = props.media;
+  const item = props.item;
 
-  const type = media.media_type.split("/");
+  const type = item.media_type.split("/");
   const isImage = type[0].toLowerCase() === "image";
 
   return (
     <dialog open>
-      <h1>{media.title}</h1>
+      <h1>{item.title}</h1>
 
       <div>
         <button onClick={() => props.setSelectedItem(null)}>x</button>
@@ -14,15 +14,16 @@ const SingleView = (props) => {
 
       {isImage ? (
         <img
-          src={media.filename}
-          alt={media.description}
-          title={media.description}
+          src={item.filename}
+          alt={item.description}
+          title={item.description}
         />
       ) : (
-        <video src={media.filename} controls />
+        <video src={item.filename} controls />
       )}
 
-      <p>{media.description}</p>
+      <p>{item.description}</p>
+      <p>{item.username}</p>
     </dialog>
   );
 };

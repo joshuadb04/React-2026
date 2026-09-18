@@ -23,6 +23,7 @@ const Single = () => {
       )}
 
       <p>{item.description}</p>
+      <p>{item.username}</p>
       <button onClick={() => navigate(-1)}>Go Back</button>
     </dialog>
   );
