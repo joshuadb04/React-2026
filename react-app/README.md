@@ -17,4 +17,4 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## Access the Site
 
-Open [this site](https://users.metropolia.fi/~joshuadb/hooks/) to view it in the browser.
+Open [this site](https://users.metropolia.fi/~joshuadb/custom-hooks/) to view it in the browser.
