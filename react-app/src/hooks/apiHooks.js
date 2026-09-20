@@ -30,4 +30,66 @@ const useMedia = () => {
   return { mediaArray };
 };
 
-export { useMedia };
+const useAuthentication = () => {
+  const postLogin = async (inputs) => {
+    try {
+      const fetchOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(inputs),
+      };
+
+      const loginResult = await fetchData(
+        import.meta.env.VITE_AUTH_API + "/auth/login",
+        fetchOptions,
+      );
+
+      console.log(loginResult);
+      return loginResult;
+    } catch (error) {
+      console.log("ERROR: ", error);
+    }
+  };
+
+  return { postLogin };
+};
+
+const useUser = () => {
+  const getUserByToken = async (token) => {
+    const fetchOptions = {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    };
+
+    const user = await fetchData(
+      import.meta.env.VITE_AUTH_API + "/users/token",
+      fetchOptions,
+    );
+
+    return user;
+  };
+  const postUser = async (user) => {
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    };
+
+    const result = await fetchData(
+      import.meta.env.VITE_AUTH_API + "/users",
+      fetchOptions,
+    );
+
+    return result;
+  };
+
+  return { getUserByToken, postUser };
+};
+
+export { useMedia, useAuthentication, useUser };

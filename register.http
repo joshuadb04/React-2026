@@ -1,0 +1,9 @@
+## Register user
+POST https://media2.edu.metropolia.fi/auth-api/api/v1/users
+Content-Type: application/json
+
+{
+  "username": "joshuadb",
+  "password": "12345",
+  "email": "testuser@metropolia.fi"
+}
