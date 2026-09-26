@@ -15,15 +15,20 @@ const Home = () => {
         <SingleView media={selectedItem} setSelectedItem={setSelectedItem} />
       )}
 
-      <table>
+      <table className="w-full border-collapse">
         <thead>
           <tr>
-            <th>Thumbnail</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Created</th>
-            <th>Size</th>
-            <th>Type</th>
+            <th className="p-4 border border-gray-300 text-center">
+              Thumbnail
+            </th>
+            <th className="p-4 border border-gray-300 text-center">Title</th>
+            <th className="p-4 border border-gray-300 text-center">
+              Description
+            </th>
+            <th className="p-4 border border-gray-300 text-center">Created</th>
+            <th className="p-4 border border-gray-300 text-center">Size</th>
+            <th className="p-4 border border-gray-300 text-center">Type</th>
+            <th className="p-4 border border-gray-300 text-center">Username</th>
           </tr>
         </thead>
 

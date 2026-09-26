@@ -31,10 +31,16 @@ const Upload = () => {
   return (
     <>
       <h1>Upload</h1>
-      <form onSubmit={handleSubmit}>
+      <form
+        className="flex flex-col items-center justify-center"
+        onSubmit={handleSubmit}
+      >
         <div>
-          <label htmlFor="title">Title</label>
+          <label className="block" htmlFor="title">
+            Title
+          </label>
           <input
+            className="w-100 my-2.5 p-2.5 border border-gray-300 rounded-[5px]"
             name="title"
             type="text"
             id="title"
@@ -42,8 +48,11 @@ const Upload = () => {
           />
         </div>
         <div>
-          <label htmlFor="description">Description</label>
+          <label className="block" htmlFor="description">
+            Description
+          </label>
           <textarea
+            className="w-100 my-2.5 p-2.5 border border-gray-300 rounded-[5px]"
             name="description"
             rows={5}
             id="description"
@@ -51,8 +60,11 @@ const Upload = () => {
           ></textarea>
         </div>
         <div>
-          <label htmlFor="file">File</label>
+          <label className="block" htmlFor="file">
+            File
+          </label>
           <input
+            className="w-55 my-4 p-1 file:bg-[#363636] file:text-white file:p-2 file:rounded-[5px] file:cursor-pointer file:hover:bg-[#111111]"
             name="file"
             type="file"
             id="file"
@@ -61,6 +73,7 @@ const Upload = () => {
           />
         </div>
         <img
+          className="w-50 h-50 object-cover rounded-[5px] my-2.5"
           src={
             file
               ? URL.createObjectURL(file)
@@ -70,6 +83,7 @@ const Upload = () => {
           width="200"
         />
         <button
+          className="my-2.5 p-2.5 rounded-[5px] bg-[#363636] text-white border-0 cursor-pointer hover:bg-[#111111]"
           type="submit"
           disabled={file && inputs.title.length > 3 ? false : true}
         >

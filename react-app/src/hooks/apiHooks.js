@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import fetchData from "../utils/fetchData";
+import { useNavigate } from "react-router";
 
 const useMedia = () => {
   const [mediaArray, setMediaArray] = useState([]);
@@ -141,7 +142,45 @@ const useFile = () => {
     return upload;
   };
 
-  return { postFile, postMedia };
+  const deleteMedia = async (media_id, token) => {
+    const fetchOptions = {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    };
+
+    const deleteItem = await fetchData(
+      `${import.meta.env.VITE_MEDIA_API}/media/${media_id}`,
+      fetchOptions,
+    );
+
+    console.log("item", media_id, "WIPED OUT OF EXISTENCE!");
+
+    return deleteItem;
+  };
+
+  const modifyMedia = async (media_id, inputs, token) => {
+    const fetchOptions = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify(inputs),
+    };
+
+    const modifyItem = await fetchData(
+      `${import.meta.env.VITE_MEDIA_API}/media/${media_id}`,
+      fetchOptions,
+    );
+
+    console.log("item", media_id, "MODIFIED");
+
+    return modifyItem;
+  };
+
+  return { postFile, postMedia, deleteMedia, modifyMedia };
 };
 
 export { useMedia, useAuthentication, useUser, useFile };

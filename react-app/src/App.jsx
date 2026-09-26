@@ -7,6 +7,7 @@ import Upload from "./views/Upload.jsx";
 import "./App.css";
 import Login from "./views/Login.jsx";
 import Logout from "./views/Logout.jsx";
+import Modify from "./views/Modify.jsx";
 import { UserProvider } from "./contexts/UserContext.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/upload" element={<Upload />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/modify" element={<Modify />} />
           </Route>
         </Routes>
       </UserProvider>

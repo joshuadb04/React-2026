@@ -9,7 +9,10 @@ const Login = () => {
     <>
       {showLogin ? <LoginForm /> : <RegisterForm />}
 
-      <button onClick={() => setShowLogin(!showLogin)}>
+      <button
+        className="my-2.5 p-2.5 rounded-[5px] bg-[#363636] text-white border-0 cursor-pointer hover:bg-[#111111]"
+        onClick={() => setShowLogin(!showLogin)}
+      >
         {showLogin ? "Register" : "Login"}
       </button>
     </>

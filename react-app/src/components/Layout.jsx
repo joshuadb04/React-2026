@@ -10,27 +10,52 @@ const Layout = () => {
   }, []);
   return (
     <div>
-      <nav>
-        <ul>
+      <nav className=" bg-[#0e0e0e] flex-1 p-4">
+        <ul className="flex justify-around">
           <li>
-            <Link to="/">Home</Link>
+            <Link
+              to="/"
+              className="block text-white text-center p-4 hover:bg-[#111111]"
+            >
+              Home
+            </Link>
           </li>
 
           {user ? (
             <>
               <li>
-                <Link to="/profile">Profile</Link>
+                <Link
+                  to="/profile"
+                  className="block text-white text-center p-4 hover:bg-[#111111]"
+                >
+                  Profile
+                </Link>
               </li>
               <li>
-                <Link to="/upload">Upload</Link>
+                <Link
+                  to="/upload"
+                  className="block text-white text-center p-4 hover:bg-[#111111]"
+                >
+                  Upload
+                </Link>
               </li>
               <li>
-                <Link to="/logout">Logout</Link>
+                <Link
+                  to="/logout"
+                  className="block text-white text-center p-4 hover:bg-[#111111]"
+                >
+                  Logout
+                </Link>
               </li>
             </>
           ) : (
             <li>
-              <Link to="/login">Login</Link>
+              <Link
+                to="/login"
+                className="block text-white text-center p-4 hover:bg-[#111111]"
+              >
+                Login
+              </Link>
             </li>
           )}
         </ul>
