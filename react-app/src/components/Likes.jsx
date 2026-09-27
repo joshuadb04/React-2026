@@ -7,7 +7,6 @@ const Likes = ({ item }) => {
   const [userLike, setUserLike] = useState([]);
   const token = localStorage.getItem("token");
   const { user } = useUserContext();
-  console.log(userLike);
 
   const { postLike, deleteLike, getLikeCountByMediaId, getLikeByUser } =
     useLikes();
@@ -51,7 +50,7 @@ const Likes = ({ item }) => {
           );
         }}
       >
-        {userLike?.length > 0 ? "Unlike" : "Like"}
+        {userLike?.length > 0 ? "Liked" : "Like"}
       </button>
       <p>{likeCount?.count}</p>
     </>

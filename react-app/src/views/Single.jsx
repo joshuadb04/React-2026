@@ -1,5 +1,6 @@
 import { useLocation } from "react-router";
 import { useNavigate } from "react-router";
+import Likes from "../components/Likes";
 
 const Single = () => {
   const { state } = useLocation();
@@ -32,6 +33,7 @@ const Single = () => {
 
       <p>{item.description}</p>
       <p>{item.username}</p>
+      <Likes item={item} />
       <button
         className="my-2.5 p-2.5 rounded-[5px] bg-[#363636] text-white border-0 cursor-pointer hover:bg-[#111111]"
         onClick={() => navigate(-1)}
