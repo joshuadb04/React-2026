@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { useUserContext } from "../hooks/contextHooks";
 import { useFile } from "../hooks/apiHooks";
 import { useNavigate } from "react-router";
+import Likes from "./Likes.jsx";
 
 const MediaRow = (props) => {
   const { user } = useUserContext();
@@ -65,6 +66,9 @@ const MediaRow = (props) => {
             </button>
           </>
         )}
+      </td>
+      <td className="p-4 border border-gray-300 text-center">
+        <Likes item={item} />
       </td>
     </tr>
   );
